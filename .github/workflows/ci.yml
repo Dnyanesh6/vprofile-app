@@ -50,6 +50,21 @@ jobs:
       - name: Build, run unit tests, and generate Checkstyle report
         run: mvn clean verify checkstyle:checkstyle -B
 
+      - name: Validate SonarQube configuration
+        env:
+          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+          SONAR_HOST_URL: ${{ env.SONAR_HOST_URL }}
+        run: |
+          set -euo pipefail
+          if [ -z "${SONAR_TOKEN}" ]; then
+            echo "::error::SONAR_TOKEN is empty or unavailable. Add it as a repository or environment secret; fork PRs cannot access repository secrets."
+            exit 1
+          fi
+          if [ -z "${SONAR_HOST_URL}" ]; then
+            echo "::error::SONAR_HOST_URL is empty. Add it as a repository variable."
+            exit 1
+          fi
+
       - name: Run SonarQube scan
         uses: sonarsource/sonarqube-scan-action@v2
         env:
