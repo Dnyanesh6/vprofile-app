@@ -1,6 +1,6 @@
 # VProfile Web Application
 
-VProfile is a Java web application packaged as a WAR file. It uses Spring Framework and Spring Security with JSP views, JPA/Hibernate persistence, MySQL, RabbitMQ, Memcached, and Elasticsearch.
+vprofile is a Java web application packaged as a WAR file. It uses Spring Framework and Spring Security with JSP views, JPA/Hibernate persistence, MySQL, RabbitMQ, Memcached, and Elasticsearch.
 
 ## Requirements
 
