@@ -1,5 +1,5 @@
 name: CI/CD Pipeline
-#this is the workflow for the CI/CD pipeline, it will run on pull requests and pushes to the main branch
+#this is the workflow for the CI/CD pipeline, 
 on:
   pull_request:
     branches:
