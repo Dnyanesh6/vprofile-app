@@ -1,3 +1,5 @@
+#this is the CI/CD pipeline for the project. It includes steps for building, testing, running SonarQube analysis, building Docker images, pushing them to AWS ECR, and updating Helm values in a separate repository.
+
 name: CI/CD Pipeline
 
 on:
